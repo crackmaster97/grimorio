@@ -12,8 +12,8 @@
 
     <style>
         /* ═══════════════════════════════════════════════════════════
-       RESET & VARIABLES
-    ═══════════════════════════════════════════════════════════ */
+           RESET & VARIABLES
+        ═══════════════════════════════════════════════════════════ */
         *,
         *::before,
         *::after {
@@ -23,45 +23,38 @@
         }
 
         :root {
-            /* — Void (outer dark background) — */
             --void: #0c0a07;
             --void-mid: #141009;
             --void-surface: #1c160e;
             --void-raised: #231b10;
 
-            /* — Parchment (content layer) — */
             --parch: #ede1bc;
             --parch-warm: #e0ce9e;
             --parch-aged: #c9b47a;
             --parch-shadow: #b09660;
             --parch-burn: #6b4820;
 
-            /* — Ink — */
             --ink: #150f07;
             --ink-mid: #2c1e0c;
             --ink-faded: #4a3418;
             --ink-pale: #7a5e38;
 
-            /* — Gold Leaf — */
             --gold: #b8893a;
             --gold-bright: #d4a84e;
             --gold-pale: #e8cfa0;
             --gold-dim: #7d5f28;
             --gold-glow: rgba(184, 137, 58, 0.18);
 
-            /* — Champagne Gold (geometría sagrada) — */
             --gold-champagne: #E3D2A3;
             --gold-champagne-bright: #f0e6c8;
             --gold-champagne-dim: #c4b07a;
             --gold-metallic-start: #d4bf8a;
             --gold-metallic-end: #a0844c;
 
-            /* — Wax / Seal — */
             --seal: #6e1a1a;
             --seal-bright: #8a2222;
             --seal-light: #c04040;
 
-            /* — Lines — */
             --line-parch: rgba(100, 70, 30, 0.25);
             --line-dark: rgba(20, 14, 6, 0.5);
             --line-gold: rgba(184, 137, 58, 0.35);
@@ -86,7 +79,6 @@
             overflow-x: hidden;
         }
 
-        /* ═══ SVG FILTERS (ink bleed, gold emboss) ═══════════════ */
         .svg-filters {
             position: absolute;
             width: 0;
@@ -94,7 +86,6 @@
             pointer-events: none;
         }
 
-        /* ═══ CONSTELLATION CANVAS ════════════════════════════════ */
         #constellation {
             position: fixed;
             inset: 0;
@@ -105,7 +96,6 @@
             opacity: 0.7;
         }
 
-        /* ═══ TYPOGRAPHY ══════════════════════════════════════════ */
         h1 {
             font-family: 'Eagle Lake', serif;
             font-size: clamp(2.6rem, 7vw, 5.5rem);
@@ -146,7 +136,6 @@
             color: var(--ink-pale);
         }
 
-        /* ═══ LAYOUT ══════════════════════════════════════════════ */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -169,7 +158,6 @@
                 linear-gradient(168deg, #f0e4c0 0%, #e6d49c 40%, #ddc88a 65%, #eaddb0 100%);
         }
 
-        /* ═══ NOISE + GRAIN ═══════════════════════════════════════ */
         .parchment-band::before,
         .parchment-section::before {
             content: '';
@@ -191,7 +179,6 @@
                 linear-gradient(175deg, #eedcb4 0%, #e3cc98 45%, #d9c185 65%, #e8d5a8 100%);
         }
 
-        /* ═══ WATERMARKS — astrological diagrams (opacity 0.03) ═══ */
         .parchment-section::after {
             content: '';
             position: absolute;
@@ -205,7 +192,6 @@
             background-repeat: no-repeat;
         }
 
-        /* ═══ HEADER ══════════════════════════════════════════════ */
         header {
             position: fixed;
             top: 0;
@@ -243,13 +229,6 @@
             align-items: center;
             gap: 0.9rem;
         }
-        .logo-sep {
-            display: inline-block;
-            width: 1px;
-            height: 1rem;
-            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-            opacity: 0.5;
-        }
         .logo-sub {
             font-family: 'Cinzel', serif;
             font-size: 0.55rem;
@@ -277,7 +256,6 @@
             color: var(--gold-bright);
         }
 
-        /* ═══ HERO ════════════════════════════════════════════════ */
         #hero {
             min-height: 100svh;
             display: flex;
@@ -354,7 +332,6 @@
             width: 100%;
         }
 
-        /* ═══ ORNAMENTAL DIVIDER ══════════════════════════════════ */
         .orn-divider {
             display: flex;
             align-items: center;
@@ -376,7 +353,6 @@
             flex-shrink: 0;
         }
 
-        /* Corner ornaments for sections */
         .corner-ornament {
             position: absolute;
             width: 55px;
@@ -404,7 +380,6 @@
             transform: scale(-1);
         }
 
-        /* ═══ SECTION HEADERS ═════════════════════════════════════ */
         .section-header {
             text-align: center;
             margin-bottom: clamp(2.5rem, 6vw, 5rem);
@@ -426,7 +401,6 @@
             margin: 0.5rem auto 0;
         }
 
-        /* ═══ BUTTONS ═════════════════════════════════════════════ */
         .btn {
             display: inline-block;
             padding: 0.9rem 2.2rem;
@@ -443,7 +417,6 @@
             overflow: hidden;
         }
 
-        /* Wax Seal / Dark Button */
         .btn-primary {
             background: radial-gradient(ellipse at 40% 30%, #8a2828, var(--seal) 55%, #3d0e0e);
             color: var(--parch);
@@ -474,7 +447,6 @@
             z-index: 1;
         }
 
-        /* ─── LUXURY BUTTON: Brushed Metal / Frosted Glass ──────── */
         .btn-luxury {
             display: inline-block;
             padding: 1rem 2.6rem;
@@ -492,30 +464,25 @@
             text-align: center;
             width: 100%;
             border: none;
-            /* Brushed metal gradient (light source at 45° top-left) */
             background: linear-gradient(160deg,
                     #e8ddc0 0%, #d4c8a2 8%, #c4b48a 20%, #b8a67a 35%,
                     #c4b488 50%, #d0c098 65%, #bca878 80%, #a89460 100%);
             color: #1a1005;
-            /* Engraved text effect */
             text-shadow:
                 0 0.6px 0 rgba(255, 255, 255, 0.35),
                 0 -0.6px 0 rgba(0, 0, 0, 0.5),
                 0 0 8px rgba(184, 137, 58, 0.2);
             letter-spacing: 3px;
-            /* 5-layer box-shadow for 2mm elevation (light from 45° top-left → shadow to bottom-right) */
             box-shadow:
                 0 0.7px 1.2px rgba(0, 0, 0, 0.35),
                 0 1.8px 3px rgba(0, 0, 0, 0.28),
                 0 3.5px 6px rgba(0, 0, 0, 0.2),
                 0 6px 12px rgba(0, 0, 0, 0.14),
                 0 10px 22px rgba(0, 0, 0, 0.08),
-                /* Specular highlight on top-left edge */
                 inset 0 0.6px 0 rgba(255, 255, 255, 0.45),
                 inset -0.3px -0.3px 0 rgba(0, 0, 0, 0.25),
                 inset 0.3px 0.3px 0 rgba(255, 255, 255, 0.2);
         }
-
         .btn-luxury::before {
             content: '';
             position: absolute;
@@ -529,7 +496,6 @@
                     rgba(0, 0, 0, 0.06) 100%);
             border-radius: var(--radius-hard);
         }
-
         .btn-luxury::after {
             content: '';
             position: absolute;
@@ -563,7 +529,6 @@
             z-index: 2;
         }
 
-        /* Gold Seal Button */
         .btn-gold {
             background: radial-gradient(ellipse at 40% 30%, #c9a040, var(--gold) 55%, #7d5f20);
             color: var(--ink);
@@ -587,7 +552,6 @@
             z-index: 1;
         }
 
-        /* Outline / Parchment Button */
         .btn-outline {
             background: transparent;
             color: var(--gold);
@@ -600,8 +564,8 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
-       LUXURY TAROT CARDS — SERVICES SECTION
-    ═══════════════════════════════════════════════════════════ */
+           LUXURY TAROT CARDS — ALWAYS DARK, ILLUMINATE ON CLICK
+        ═══════════════════════════════════════════════════════════ */
         #servicios {
             overflow: hidden;
         }
@@ -615,49 +579,41 @@
             perspective: 1200px;
         }
 
-        /* ─── TAROT CARD ─────────────────────────────────────── */
+        /* ─── TAROT CARD: SIEMPRE OSCURA ─────────────────────── */
         .service-card {
             background:
-                /* Cotton paper fiber texture (SVG noise) */
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='fibers'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.15' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fibers)' opacity='0.08'/%3E%3C/svg%3E"),
-                linear-gradient(162deg,
-                    #f5ebd0 0%, #efe0bb 8%, #e8d5a4 20%,
-                    #f2e4c0 35%, #e6d09a 50%, #eddbb0 65%,
-                    #e2ca90 80%, #f0dfb8 100%);
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='fibers'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.15' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fibers)' opacity='0.06'/%3E%3C/svg%3E"),
+                linear-gradient(155deg, #1e140a 0%, #15100a 50%, #1a1208 100%);
             background-size: 200px 200px, 100% 100%;
             padding: 2.8rem 2.2rem;
             cursor: pointer;
             transition: all 0.65s var(--ease-out-expo);
             position: relative;
             overflow: hidden;
-            /* Metallic gilt edge */
             border: 1px solid transparent;
             border-image: linear-gradient(135deg,
-                    #c4a86a 0%, #e3d2a3 20%, #b8944c 40%,
-                    #d4c08a 55%, #a08040 70%, #e8d8b0 85%, #c4a86a 100%) 1;
-            /* Shadow aligned to 45° light source (top-left → shadow bottom-right) */
+                    #4a3820 0%, #6b5430 20%, #8b6e40 40%,
+                    #6b5430 55%, #4a3820 70%, #6b5430 85%, #4a3820 100%) 1;
             box-shadow:
-                2px 3px 6px rgba(0, 0, 0, 0.2),
-                5px 7px 16px rgba(0, 0, 0, 0.12),
-                10px 14px 30px rgba(0, 0, 0, 0.06);
+                2px 3px 6px rgba(0, 0, 0, 0.35),
+                5px 7px 16px rgba(0, 0, 0, 0.25),
+                10px 14px 30px rgba(0, 0, 0, 0.12);
             transform-origin: center center;
             transform: rotateY(0deg) rotateX(0deg);
-            will-change: transform, box-shadow;
+            will-change: transform, box-shadow, border-image;
         }
 
-        /* Card gilt edge inner glow */
         .service-card::before {
             content: '';
             position: absolute;
             inset: 3px;
             pointer-events: none;
             z-index: 0;
-            border: 0.5px solid rgba(184, 137, 58, 0.25);
+            border: 0.5px solid rgba(184, 137, 58, 0.15);
             border-radius: 1px;
-            transition: opacity 0.65s var(--ease-out-expo);
+            transition: border-color 0.65s var(--ease-out-expo), opacity 0.65s var(--ease-out-expo);
         }
 
-        /* Age spots */
         .service-card .age-spots {
             content: '';
             position: absolute;
@@ -665,16 +621,12 @@
             pointer-events: none;
             z-index: 0;
             background:
-                radial-gradient(circle at 5% 8%, rgba(100, 65, 20, 0.12) 0%, transparent 30%),
-                radial-gradient(circle at 95% 92%, rgba(80, 50, 15, 0.15) 0%, transparent 28%),
-                radial-gradient(circle at 15% 85%, rgba(90, 55, 18, 0.08) 0%, transparent 22%);
+                radial-gradient(circle at 5% 8%, rgba(100, 65, 20, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 95% 92%, rgba(80, 50, 15, 0.1) 0%, transparent 28%),
+                radial-gradient(circle at 15% 85%, rgba(90, 55, 18, 0.06) 0%, transparent 22%);
             transition: opacity 0.65s var(--ease-out-expo);
         }
-        .service-card.selected .age-spots {
-            opacity: 0;
-        }
 
-        /* Bottom gilt accent line */
         .service-card::after {
             content: '';
             position: absolute;
@@ -688,42 +640,52 @@
             transform-origin: center;
             transition: transform 0.6s var(--ease-out-expo);
         }
-        .service-card:hover::after,
-        .service-card.selected::after {
-            transform: scaleX(1);
-        }
 
-        /* ─── HOVER: 3D rotation + gold brightening ──────────── */
+        /* ─── HOVER: solo elevación y brillo dorado sutil ──── */
         .service-card:hover {
             background:
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='fibers2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.15' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fibers2)' opacity='0.06'/%3E%3C/svg%3E"),
                 linear-gradient(155deg, #1e140a 0%, #15100a 50%, #1a1208 100%);
             background-size: 200px 200px, 100% 100%;
             box-shadow:
-                3px 4px 8px rgba(0, 0, 0, 0.35),
-                7px 10px 22px rgba(0, 0, 0, 0.22),
-                14px 20px 40px rgba(0, 0, 0, 0.12),
-                inset 0 0 50px rgba(0, 0, 0, 0.4);
+                3px 4px 8px rgba(0, 0, 0, 0.4),
+                7px 10px 22px rgba(0, 0, 0, 0.3),
+                14px 20px 40px rgba(0, 0, 0, 0.18),
+                inset 0 0 30px rgba(184, 137, 58, 0.05);
             border-image: linear-gradient(135deg,
-                    #e3d2a3 0%, #f0e6c8 20%, #d4b860 40%,
-                    #e8d8b0 55%, #c4a040 70%, #f5edd8 85%, #e3d2a3 100%) 1;
-            transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(-3px);
+                    #6b5430 0%, #8b6e40 20%, #a08050 40%,
+                    #8b6e40 55%, #6b5430 70%, #8b6e40 85%, #6b5430 100%) 1;
+            transform: perspective(1000px) rotateY(4deg) rotateX(1.5deg) translateY(-3px);
         }
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* ─── SELECTED: pequeña iluminación dorada ──────────── */
         .service-card.selected {
             background:
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='fibers3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.15' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fibers3)' opacity='0.05'/%3E%3C/svg%3E"),
-                linear-gradient(155deg, #1e140a 0%, #15100a 50%, #1a1208 100%);
+                linear-gradient(155deg, #2a1e0e 0%, #1e140a 30%, #251a0d 70%, #1a1208 100%);
             background-size: 200px 200px, 100% 100%;
             box-shadow:
                 0 0 0 1px var(--gold-dim),
+                0 0 20px rgba(184, 137, 58, 0.25),
                 3px 4px 8px rgba(0, 0, 0, 0.4),
-                7px 10px 22px rgba(0, 0, 0, 0.25),
-                14px 20px 40px rgba(0, 0, 0, 0.14),
-                inset 0 0 60px rgba(0, 0, 0, 0.5);
+                7px 10px 22px rgba(0, 0, 0, 0.3),
+                14px 20px 40px rgba(0, 0, 0, 0.18),
+                inset 0 0 45px rgba(184, 137, 58, 0.08);
             border-image: linear-gradient(135deg,
-                    #f0e6c8 0%, #faf4e0 20%, #e3c870 40%,
-                    #f0e4c0 55%, #d4b050 70%, #fefcf4 85%, #f0e6c8 100%) 1;
-            transform: perspective(1000px) rotateY(3deg) rotateX(1deg) translateY(-2px);
+                    #c4a86a 0%, #e3d2a3 20%, #d4b860 40%,
+                    #e8d8b0 55%, #c4a040 70%, #e3d2a3 85%, #c4a86a 100%) 1;
+            transform: perspective(1000px) rotateY(2deg) rotateX(0.5deg) translateY(-1px);
+        }
+        .service-card.selected::before {
+            border-color: rgba(227, 210, 163, 0.4);
+        }
+        .service-card.selected::after {
+            transform: scaleX(1);
+            background: linear-gradient(90deg, transparent, var(--gold-champagne-bright), var(--gold-champagne),
+                    var(--gold-champagne-bright), transparent);
         }
 
         .service-card-inner {
@@ -748,57 +710,53 @@
             filter: drop-shadow(0 1.5px 2px rgba(184, 137, 58, 0.45)) drop-shadow(0 0 6px rgba(227, 210, 163, 0.3));
             transition: all 0.65s var(--ease-out-expo);
         }
-        .service-card:hover .service-card-icon-wrap svg,
-        .service-card.selected .service-card-icon-wrap svg {
-            filter: drop-shadow(0 2px 3px rgba(227, 210, 163, 0.7)) drop-shadow(0 0 16px rgba(240, 230, 200, 0.55));
+        .service-card:hover .service-card-icon-wrap svg {
+            filter: drop-shadow(0 2px 3px rgba(227, 210, 163, 0.7)) drop-shadow(0 0 16px rgba(240, 230, 200, 0.45));
         }
-        .service-card:hover .service-card-icon-wrap,
+        .service-card.selected .service-card-icon-wrap svg {
+            filter: drop-shadow(0 2.5px 4px rgba(227, 210, 163, 0.9)) drop-shadow(0 0 24px rgba(240, 230, 200, 0.7));
+        }
+        .service-card:hover .service-card-icon-wrap {
+            transform: scale(1.05);
+        }
         .service-card.selected .service-card-icon-wrap {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
-        /* ─── TITLE ─────────────────────────────────────────── */
+        /* ─── TITLE (siempre claro) ─────────────────────────── */
         .service-card-title {
             font-family: 'Cinzel', serif;
             font-size: 1rem;
             font-weight: 500;
             letter-spacing: 0.08em;
-            color: var(--ink);
+            color: var(--parch-warm);
             margin-bottom: 0.8rem;
             text-align: center;
-            transition: color 0.65s var(--ease-out-expo);
-            text-shadow: 0 1px 2px rgba(21, 15, 7, 0.2);
-            /* Subtle ink bleed */
+            transition: color 0.65s var(--ease-out-expo), text-shadow 0.65s var(--ease-out-expo);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px rgba(184, 137, 58, 0.2);
             filter: url(#ink-bleed-light);
         }
-        .service-card:hover .service-card-title,
         .service-card.selected .service-card-title {
-            color: var(--parch);
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px rgba(184, 137, 58, 0.25);
+            color: #f5edd8;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 14px rgba(227, 210, 163, 0.5);
         }
 
-        /* ─── DESCRIPTION (handwritten ink simulation) ──────── */
+        /* ─── DESCRIPTION (siempre claro) ──────────────────── */
         .service-card-desc {
             font-family: 'IM Fell English', serif;
             font-style: italic;
             font-size: 0.82rem;
             line-height: 1.9;
-            color: var(--ink-faded);
+            color: rgba(237, 225, 188, 0.55);
             margin-bottom: 2rem;
             text-align: center;
-            transition: color 0.65s var(--ease-out-expo);
-            /* Irregular ink drying effect */
+            transition: color 0.65s var(--ease-out-expo), text-shadow 0.65s var(--ease-out-expo);
             filter: url(#ink-bleed);
-            text-shadow:
-                0.3px 0.1px 0 rgba(74, 52, 24, 0.15),
-                -0.2px 0.3px 0 rgba(74, 52, 24, 0.1);
+            text-shadow: 0.3px 0.1px 0 rgba(0, 0, 0, 0.3), -0.2px 0.3px 0 rgba(0, 0, 0, 0.2);
         }
-        .service-card:hover .service-card-desc,
         .service-card.selected .service-card-desc {
-            color: rgba(237, 225, 188, 0.5);
-            text-shadow:
-                0.3px 0.1px 0 rgba(237, 225, 188, 0.08),
-                -0.2px 0.3px 0 rgba(237, 225, 188, 0.05);
+            color: rgba(245, 237, 216, 0.7);
+            text-shadow: 0.3px 0.1px 0 rgba(0, 0, 0, 0.4), -0.2px 0.3px 0 rgba(0, 0, 0, 0.3), 0 0 6px rgba(184, 137, 58, 0.15);
         }
 
         /* ─── META ──────────────────────────────────────────── */
@@ -807,19 +765,18 @@
             justify-content: space-between;
             align-items: flex-end;
             padding-top: 1.2rem;
-            border-top: 1px solid var(--line-parch);
+            border-top: 1px solid rgba(184, 137, 58, 0.2);
             transition: border-color 0.65s var(--ease-out-expo);
         }
-        .service-card:hover .service-card-meta,
         .service-card.selected .service-card-meta {
-            border-color: rgba(184, 137, 58, 0.2);
+            border-color: rgba(227, 210, 163, 0.35);
         }
         .service-price {
             font-family: 'Eagle Lake', serif;
             font-size: 1.5rem;
-            color: var(--ink);
-            transition: color 0.65s var(--ease-out-expo);
-            text-shadow: 1px 1px 2px rgba(21, 15, 7, 0.2);
+            color: var(--gold);
+            transition: color 0.65s var(--ease-out-expo), text-shadow 0.65s var(--ease-out-expo);
+            text-shadow: 0 0 10px rgba(184, 137, 58, 0.4);
         }
         .service-price sup {
             font-family: 'Cinzel', serif;
@@ -827,22 +784,20 @@
             vertical-align: super;
             letter-spacing: 0.1em;
         }
-        .service-card:hover .service-price,
         .service-card.selected .service-price {
-            color: var(--gold);
-            text-shadow: 0 0 10px rgba(184, 137, 58, 0.4);
+            color: var(--gold-bright);
+            text-shadow: 0 0 18px rgba(212, 168, 78, 0.6), 0 0 30px rgba(227, 210, 163, 0.3);
         }
         .service-duration {
             font-family: 'Cinzel', serif;
             font-size: 0.58rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--ink-pale);
+            color: rgba(184, 137, 58, 0.5);
             transition: color 0.65s var(--ease-out-expo);
         }
-        .service-card:hover .service-duration,
         .service-card.selected .service-duration {
-            color: rgba(184, 137, 58, 0.5);
+            color: rgba(227, 210, 163, 0.6);
         }
 
         /* ─── CHECK ─────────────────────────────────────────── */
@@ -852,30 +807,32 @@
             right: 1.2rem;
             width: 22px;
             height: 22px;
-            border: 1px solid var(--line-parch);
+            border: 1px solid rgba(184, 137, 58, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transition: opacity 0.5s var(--ease), background 0.5s var(--ease), border-color 0.5s var(--ease);
+            transition: opacity 0.5s var(--ease), background 0.5s var(--ease), border-color 0.5s var(--ease),
+                box-shadow 0.5s var(--ease);
             z-index: 2;
         }
         .service-card.selected .service-check {
             opacity: 1;
-            background: var(--gold);
-            border-color: var(--gold);
+            background: var(--gold-champagne);
+            border-color: var(--gold-champagne-bright);
+            box-shadow: 0 0 12px rgba(227, 210, 163, 0.5);
         }
         .service-check svg {
             width: 10px;
-            color: var(--ink);
+            color: #1a1005;
         }
 
         /* ═══ INK BLOT SELECTION EFFECT ═══════════════════════ */
         .ink-blot {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(ellipse, rgba(184, 137, 58, 0.35) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(227, 210, 163, 0.35) 0%, transparent 70%);
             width: 0;
             height: 0;
             transform: translate(-50%, -50%);
@@ -908,8 +865,6 @@
             gap: 3.5rem;
             align-items: start;
         }
-
-        /* ─── CALENDAR ─────────────────────────────────────────── */
         .calendar-wrap {
             border: 1px solid var(--line-parch);
             background: radial-gradient(ellipse at 0% 0%, rgba(30, 15, 0, 0.35) 0%, transparent 25%),
@@ -1100,7 +1055,6 @@
             border-color: rgba(100, 70, 30, 0.12);
         }
 
-        /* ─── FORM ─────────────────────────────────────────────── */
         .form-wrap {
             display: flex;
             flex-direction: column;
@@ -1246,7 +1200,6 @@
             display: block;
         }
 
-        /* ═══ DARK VOID SECTION (Philosophy) ═════════════════════ */
         #filosofia {
             background: var(--void-mid);
             position: relative;
@@ -1302,7 +1255,6 @@
             line-height: 1.9;
         }
 
-        /* ═══ FOOTER ══════════════════════════════════════════════ */
         footer {
             background: var(--void);
             border-top: 1px solid rgba(184, 137, 58, 0.15);
@@ -1338,7 +1290,6 @@
             color: rgba(184, 137, 58, 0.3);
         }
 
-        /* ═══ MODAL ═══════════════════════════════════════════════ */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -1481,7 +1432,6 @@
             color: var(--ink);
         }
 
-        /* ═══ TOAST ═══════════════════════════════════════════════ */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -1506,7 +1456,6 @@
             transform: translateY(0);
         }
 
-        /* ═══ SCROLL HINT ═════════════════════════════════════════ */
         .scroll-hint {
             display: flex;
             flex-direction: column;
@@ -1531,7 +1480,6 @@
             opacity: 0.5;
         }
 
-        /* ═══ ANIMATIONS ══════════════════════════════════════════ */
         @keyframes inkReveal {
             from {
                 opacity: 0;
@@ -1569,15 +1517,6 @@
                 transform: rotate(-360deg);
             }
         }
-        @keyframes flickerGold {
-            0%,
-            100% {
-                opacity: 0.7;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
 
         .reveal {
             opacity: 0;
@@ -1589,7 +1528,6 @@
             transform: translateY(0);
         }
 
-        /* ═══ RESPONSIVE ══════════════════════════════════════════ */
         @media (max-width: 768px) {
             .hero-inner {
                 grid-template-columns: 1fr;
@@ -1647,10 +1585,8 @@
 </head>
 <body>
 
-    <!-- ░░ SVG FILTERS (ink bleed, hidden defs) ░░ -->
     <svg class="svg-filters" aria-hidden="true">
         <defs>
-            <!-- Subtle ink bleed for description text -->
             <filter id="ink-bleed" x="-2%" y="-2%" width="104%" height="104%">
                 <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" result="noise" />
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.35" xChannelSelector="R"
@@ -1660,24 +1596,16 @@
                     <feMergeNode in="SourceGraphic" opacity="0.15" />
                 </feMerge>
             </filter>
-            <!-- Lighter ink bleed for titles -->
             <filter id="ink-bleed-light" x="-1%" y="-1%" width="102%" height="102%">
                 <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="noise" />
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.2" xChannelSelector="R"
                 yChannelSelector="G" />
             </filter>
-            <!-- Gold emboss filter for sacred geometry -->
-            <filter id="gold-emboss" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#b8893a" flood-opacity="0.5" />
-                <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#e3d2a3" flood-opacity="0.35" />
-            </filter>
         </defs>
     </svg>
 
-    <!-- ░░ CONSTELLATION BACKGROUND ░░ -->
     <svg id="constellation" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
 
-    <!-- ░░ HEADER ░░ -->
     <header>
         <a href="#" class="logo">
             <span>
@@ -1693,7 +1621,6 @@
         <a href="#reserva" class="btn btn-outline" style="padding:0.5rem 1.3rem;font-size:0.58rem;">Solicitar Cita</a>
     </header>
 
-    <!-- ░░ HERO (dark void - stars visible) ░░ -->
     <section id="hero">
         <div class="container">
             <div class="hero-inner">
@@ -1755,214 +1682,177 @@
         </div>
     </section>
 
-    <!-- ░░ ALCHEMICAL TRANSITION BAND ░░ -->
-    <div
-    style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);border-top:1px solid rgba(184,137,58,0.1);border-bottom:1px solid rgba(184,137,58,0.08);">
-    <div class="container">
-        <div class="orn-divider">
-            <div class="orn-line"></div>
-            <svg class="orn-symbol" width="80" height="24" viewBox="0 0 120 24" fill="none">
-                <text x="0" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☿</text>
-                <line x1="22" y1="12" x2="38" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
-                <circle cx="50" cy="12" r="5" stroke="#b8893a" stroke-width="0.7" opacity="0.6" />
-                <line x1="62" y1="12" x2="78" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
-                <text x="82" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">♄</text>
-                <line x1="104" y1="12" x2="120" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
-            </svg>
-            <div class="orn-line"></div>
-        </div>
-    </div>
-</div>
-
-<!-- ░░ SERVICES — LUXURY TAROT CARDS ░░ -->
-<section id="servicios" class="parchment-section">
-    <svg class="corner-ornament tl" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/><circle cx="28" cy="2" r="1" fill="#b8893a" opacity="0.4"/><circle cx="2" cy="28" r="1" fill="#b8893a" opacity="0.4"/></svg>
-    <svg class="corner-ornament tr" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
-    <svg class="corner-ornament bl" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
-    <svg class="corner-ornament br" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
-
-    <div class="container">
-        <div class="section-header reveal">
-            <p class="section-eyebrow">✦ &nbsp; Catálogo de Ritos &nbsp; ✦</p>
-            <h2 class="section-title">Experiencias Curadas</h2>
-            <div class="orn-divider" style="max-width:320px;margin:1rem auto;">
+    <div style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);border-top:1px solid rgba(184,137,58,0.1);border-bottom:1px solid rgba(184,137,58,0.08);">
+        <div class="container">
+            <div class="orn-divider">
                 <div class="orn-line"></div>
-                <span class="orn-symbol" style="font-size:0.7rem;padding:0 0.8rem;">◈</span>
+                <svg class="orn-symbol" width="80" height="24" viewBox="0 0 120 24" fill="none">
+                    <text x="0" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☿</text>
+                    <line x1="22" y1="12" x2="38" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
+                    <circle cx="50" cy="12" r="5" stroke="#b8893a" stroke-width="0.7" opacity="0.6" />
+                    <line x1="62" y1="12" x2="78" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
+                    <text x="82" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">♄</text>
+                    <line x1="104" y1="12" x2="120" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.5" />
+                </svg>
                 <div class="orn-line"></div>
             </div>
-            <p class="section-sub">Cada sesión es concebida como un rito de paso, conducida con precisión, devoción y
-            presencia absoluta.</p>
         </div>
+    </div>
 
-        <div class="services-grid reveal">
+    <section id="servicios" class="parchment-section">
+        <svg class="corner-ornament tl" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/><circle cx="28" cy="2" r="1" fill="#b8893a" opacity="0.4"/><circle cx="2" cy="28" r="1" fill="#b8893a" opacity="0.4"/></svg>
+        <svg class="corner-ornament tr" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
+        <svg class="corner-ornament bl" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
+        <svg class="corner-ornament br" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
 
-            <!-- ═══ CARTA 1: El Vínculo Energético (Armonización Energética Premium) ═══ -->
-            <div class="service-card" data-service="Armonización Energética Premium" data-price="USD 180"
-            data-duration="120 min" onclick="selectService(this, event)">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">✦ &nbsp; Catálogo de Ritos &nbsp; ✦</p>
+                <h2 class="section-title">Experiencias Curadas</h2>
+                <div class="orn-divider" style="max-width:320px;margin:1rem auto;">
+                    <div class="orn-line"></div>
+                    <span class="orn-symbol" style="font-size:0.7rem;padding:0 0.8rem;">◈</span>
+                    <div class="orn-line"></div>
+                </div>
+                <p class="section-sub">Cada sesión es concebida como un rito de paso, conducida con precisión, devoción y
+                presencia absoluta.</p>
+            </div>
+
+            <div class="services-grid reveal">
+
+                <div class="service-card" data-service="Armonización Energética Premium" data-price="USD 180"
+                data-duration="120 min" onclick="selectService(this, event)">
+                <div class="age-spots"></div>
+                <div class="service-card-inner">
+                    <div class="service-check">
+                        <svg viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1,4 3.5,7 9,1"/></svg>
+                    </div>
+                    <div class="service-card-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#E3D2A3" stroke-width="0.5" opacity="0.7"/>
+                            <circle cx="40" cy="40" r="28" stroke="#E3D2A3" stroke-width="0.4" stroke-dasharray="3 5" opacity="0.55"/>
+                            <circle cx="40" cy="40" r="18" stroke="#E3D2A3" stroke-width="0.5" opacity="0.65"/>
+                            <g stroke="#E3D2A3" stroke-width="0.4" opacity="0.5">
+                                <line x1="40" y1="4" x2="40" y2="16"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(30 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(60 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(90 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(120 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(150 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(180 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(210 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(240 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(270 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(300 40 40)"/>
+                                <line x1="40" y1="4" x2="40" y2="16" transform="rotate(330 40 40)"/>
+                            </g>
+                            <polygon points="40,12 62,52 18,52" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
+                            <polygon points="40,68 18,28 62,28" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
+                            <circle cx="40" cy="40" r="2.5" fill="#E3D2A3" fill-opacity="0.8"/>
+                            <circle cx="40" cy="40" r="5" stroke="#E3D2A3" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="40" cy="8" r="1" fill="#E3D2A3" opacity="0.5"/>
+                            <circle cx="40" cy="72" r="1" fill="#E3D2A3" opacity="0.5"/>
+                            <circle cx="8" cy="40" r="1" fill="#E3D2A3" opacity="0.5"/>
+                            <circle cx="72" cy="40" r="1" fill="#E3D2A3" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card-title">Armonización Energética Premium</h3>
+                    <p class="service-card-desc">Reequilibrio del campo áurico mediante biomagnetismo, reiki avanzado y
+                    alineación de chakras con cristales de alta vibración, en entorno ceremonial.</p>
+                    <div class="service-card-meta">
+                        <span class="service-price"><sup>USD</sup> 180</span>
+                        <span class="service-duration">120 minutos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card" data-service="Experiencia de Tarot Integral" data-price="USD 120"
+            data-duration="90 min" onclick="selectService(this, event)">
             <div class="age-spots"></div>
             <div class="service-card-inner">
                 <div class="service-check">
                     <svg viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1,4 3.5,7 9,1"/></svg>
                 </div>
-                <!-- Sacred Geometry: El Vínculo Energético — concentric circles + radiant lines + interlocking triangles -->
                 <div class="service-card-icon-wrap">
                     <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Outer ring -->
-                        <circle cx="40" cy="40" r="36" stroke="#E3D2A3" stroke-width="0.5" opacity="0.7"/>
-                        <!-- Middle ring with dash -->
-                        <circle cx="40" cy="40" r="28" stroke="#E3D2A3" stroke-width="0.4" stroke-dasharray="3 5" opacity="0.55"/>
-                        <!-- Inner ring -->
-                        <circle cx="40" cy="40" r="18" stroke="#E3D2A3" stroke-width="0.5" opacity="0.65"/>
-                        <!-- Radiant lines (12 spokes) -->
-                        <g stroke="#E3D2A3" stroke-width="0.4" opacity="0.5">
-                            <line x1="40" y1="4" x2="40" y2="16"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(30 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(60 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(90 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(120 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(150 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(180 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(210 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(240 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(270 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(300 40 40)"/>
-                            <line x1="40" y1="4" x2="40" y2="16" transform="rotate(330 40 40)"/>
-                        </g>
-                        <!-- Interlocking triangles (hexagram) -->
-                        <polygon points="40,12 62,52 18,52" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
-                        <polygon points="40,68 18,28 62,28" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
-                        <!-- Central dot -->
-                        <circle cx="40" cy="40" r="2.5" fill="#E3D2A3" fill-opacity="0.8"/>
-                        <circle cx="40" cy="40" r="5" stroke="#E3D2A3" stroke-width="0.4" opacity="0.5"/>
-                        <!-- Small energy dots at cardinal points -->
-                        <circle cx="40" cy="8" r="1" fill="#E3D2A3" opacity="0.5"/>
-                        <circle cx="40" cy="72" r="1" fill="#E3D2A3" opacity="0.5"/>
-                        <circle cx="8" cy="40" r="1" fill="#E3D2A3" opacity="0.5"/>
-                        <circle cx="72" cy="40" r="1" fill="#E3D2A3" opacity="0.5"/>
+                        <circle cx="40" cy="40" r="36" stroke="#E3D2A3" stroke-width="0.5" opacity="0.65"/>
+                        <circle cx="40" cy="40" r="32" stroke="#E3D2A3" stroke-width="0.3" stroke-dasharray="2 6" opacity="0.4"/>
+                        <polygon points="40,6 72,64 8,64" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
+                        <ellipse cx="40" cy="42" rx="16" ry="10" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.7"/>
+                        <polygon points="40,35 45.5,38.5 45.5,45.5 40,49 34.5,45.5 34.5,38.5" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.75"/>
+                        <circle cx="40" cy="42" r="3" fill="#E3D2A3" fill-opacity="0.8"/>
+                        <path d="M22 38 Q40 28 58 38" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.5"/>
+                        <circle cx="40" cy="10" r="1" fill="#E3D2A3" opacity="0.5"/>
+                        <circle cx="68" cy="60" r="1" fill="#E3D2A3" opacity="0.5"/>
+                        <circle cx="12" cy="60" r="1" fill="#E3D2A3" opacity="0.5"/>
                     </svg>
                 </div>
-                <h3 class="service-card-title">Armonización Energética Premium</h3>
-                <p class="service-card-desc">Reequilibrio del campo áurico mediante biomagnetismo, reiki avanzado y
-                alineación de chakras con cristales de alta vibración, en entorno ceremonial.</p>
+                <h3 class="service-card-title">Experiencia de Tarot Integral</h3>
+                <p class="service-card-desc">Lectura profunda que integra arquetipos junguianos, numerología esotérica y
+                patrones kármicos para revelar el mapa de tu proceso interior actual.</p>
                 <div class="service-card-meta">
-                    <span class="service-price"><sup>USD</sup> 180</span>
-                    <span class="service-duration">120 minutos</span>
+                    <span class="service-price"><sup>USD</sup> 120</span>
+                    <span class="service-duration">90 minutos</span>
                 </div>
             </div>
         </div>
 
-        <!-- ═══ CARTA 2: La Visión del Éter (Experiencia de Tarot Integral) ═══ -->
-        <div class="service-card" data-service="Experiencia de Tarot Integral" data-price="USD 120"
-        data-duration="90 min" onclick="selectService(this, event)">
+        <div class="service-card" data-service="Viaje Akáshico Guiado" data-price="USD 220" data-duration="150 min"
+        onclick="selectService(this, event)">
         <div class="age-spots"></div>
         <div class="service-card-inner">
             <div class="service-check">
                 <svg viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1,4 3.5,7 9,1"/></svg>
             </div>
-            <!-- Sacred Geometry: La Visión del Éter — eye within triangle, cosmic circles -->
             <div class="service-card-icon-wrap">
                 <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Outer cosmic ring -->
                     <circle cx="40" cy="40" r="36" stroke="#E3D2A3" stroke-width="0.5" opacity="0.65"/>
-                    <circle cx="40" cy="40" r="32" stroke="#E3D2A3" stroke-width="0.3" stroke-dasharray="2 6" opacity="0.4"/>
-                    <!-- Triangle -->
-                    <polygon points="40,6 72,64 8,64" stroke="#E3D2A3" stroke-width="0.55" fill="none" opacity="0.7"/>
-                    <!-- Eye shape (vesica piscis stylized) -->
-                    <ellipse cx="40" cy="42" rx="16" ry="10" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.7"/>
-                    <!-- Pupil (hexagonal geometry) -->
-                    <polygon points="40,35 45.5,38.5 45.5,45.5 40,49 34.5,45.5 34.5,38.5" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.75"/>
-                    <circle cx="40" cy="42" r="3" fill="#E3D2A3" fill-opacity="0.8"/>
-                    <!-- Brow line -->
-                    <path d="M22 38 Q40 28 58 38" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.5"/>
-                    <!-- Radiant dots around triangle -->
-                    <circle cx="40" cy="10" r="1" fill="#E3D2A3" opacity="0.5"/>
-                    <circle cx="68" cy="60" r="1" fill="#E3D2A3" opacity="0.5"/>
-                    <circle cx="12" cy="60" r="1" fill="#E3D2A3" opacity="0.5"/>
-                    <!-- Inner wisdom dots -->
-                    <circle cx="40" cy="22" r="0.8" fill="#E3D2A3" opacity="0.35"/>
-                    <circle cx="55" cy="50" r="0.8" fill="#E3D2A3" opacity="0.35"/>
-                    <circle cx="25" cy="50" r="0.8" fill="#E3D2A3" opacity="0.35"/>
+                    <circle cx="40" cy="40" r="12" stroke="#E3D2A3" stroke-width="0.45" fill="none" opacity="0.6"/>
+                    <circle cx="40" cy="22" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <circle cx="55.6" cy="31" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <circle cx="55.6" cy="49" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <circle cx="40" cy="58" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <circle cx="24.4" cy="49" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <circle cx="24.4" cy="31" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
+                    <polygon points="40,28 50.4,34 50.4,46 40,52 29.6,46 29.6,34" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.7"/>
+                    <circle cx="40" cy="40" r="2.8" fill="#E3D2A3" fill-opacity="0.85"/>
+                    <circle cx="40" cy="40" r="6" stroke="#E3D2A3" stroke-width="0.35" opacity="0.5"/>
+                    <circle cx="40" cy="6" r="1.2" fill="#E3D2A3" opacity="0.5"/>
+                    <circle cx="40" cy="74" r="1.2" fill="#E3D2A3" opacity="0.5"/>
+                    <circle cx="6" cy="40" r="1.2" fill="#E3D2A3" opacity="0.5"/>
+                    <circle cx="74" cy="40" r="1.2" fill="#E3D2A3" opacity="0.5"/>
                 </svg>
             </div>
-            <h3 class="service-card-title">Experiencia de Tarot Integral</h3>
-            <p class="service-card-desc">Lectura profunda que integra arquetipos junguianos, numerología esotérica y
-            patrones kármicos para revelar el mapa de tu proceso interior actual.</p>
+            <h3 class="service-card-title">Viaje Akáshico Guiado</h3>
+            <p class="service-card-desc">Acceso profundo a los Registros del alma para explorar vidas pasadas, contratos
+            del alma, misión de vida y bloqueos transgeneracionales con guía experta.</p>
             <div class="service-card-meta">
-                <span class="service-price"><sup>USD</sup> 120</span>
-                <span class="service-duration">90 minutos</span>
+                <span class="service-price"><sup>USD</sup> 220</span>
+                <span class="service-duration">150 minutos</span>
             </div>
         </div>
     </div>
-
-    <!-- ═══ CARTA 3: El Portal de la Conciencia (Viaje Akáshico Guiado) ═══ -->
-    <div class="service-card" data-service="Viaje Akáshico Guiado" data-price="USD 220" data-duration="150 min"
-    onclick="selectService(this, event)">
-    <div class="age-spots"></div>
-    <div class="service-card-inner">
-        <div class="service-check">
-            <svg viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1,4 3.5,7 9,1"/></svg>
-        </div>
-        <!-- Sacred Geometry: El Portal de la Conciencia — Metatron's cube / flower of life seed -->
-        <div class="service-card-icon-wrap">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Outer ring -->
-                <circle cx="40" cy="40" r="36" stroke="#E3D2A3" stroke-width="0.5" opacity="0.65"/>
-                <!-- Seed of Life: central circle + 6 surrounding -->
-                <circle cx="40" cy="40" r="12" stroke="#E3D2A3" stroke-width="0.45" fill="none" opacity="0.6"/>
-                <circle cx="40" cy="22" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <circle cx="55.6" cy="31" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <circle cx="55.6" cy="49" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <circle cx="40" cy="58" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <circle cx="24.4" cy="49" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <circle cx="24.4" cy="31" r="12" stroke="#E3D2A3" stroke-width="0.4" fill="none" opacity="0.45"/>
-                <!-- Central hexagon -->
-                <polygon points="40,28 50.4,34 50.4,46 40,52 29.6,46 29.6,34" stroke="#E3D2A3" stroke-width="0.5" fill="none" opacity="0.7"/>
-                <!-- Central portal dot -->
-                <circle cx="40" cy="40" r="2.8" fill="#E3D2A3" fill-opacity="0.85"/>
-                <circle cx="40" cy="40" r="6" stroke="#E3D2A3" stroke-width="0.35" opacity="0.5"/>
-                <!-- Spiral hints -->
-                <path d="M40 28 Q48 32 46 40 Q44 48 40 48" stroke="#E3D2A3" stroke-width="0.35" fill="none" opacity="0.4"/>
-                <path d="M40 52 Q32 48 34 40 Q36 32 40 32" stroke="#E3D2A3" stroke-width="0.35" fill="none" opacity="0.4"/>
-                <!-- Outer portal markers -->
-                <circle cx="40" cy="6" r="1.2" fill="#E3D2A3" opacity="0.5"/>
-                <circle cx="40" cy="74" r="1.2" fill="#E3D2A3" opacity="0.5"/>
-                <circle cx="6" cy="40" r="1.2" fill="#E3D2A3" opacity="0.5"/>
-                <circle cx="74" cy="40" r="1.2" fill="#E3D2A3" opacity="0.5"/>
-            </svg>
-        </div>
-        <h3 class="service-card-title">Viaje Akáshico Guiado</h3>
-        <p class="service-card-desc">Acceso profundo a los Registros del alma para explorar vidas pasadas, contratos
-        del alma, misión de vida y bloqueos transgeneracionales con guía experta.</p>
-        <div class="service-card-meta">
-            <span class="service-price"><sup>USD</sup> 220</span>
-            <span class="service-duration">150 minutos</span>
-        </div>
-    </div>
-</div>
 
 </div>
 </div>
 </section>
 
-<!-- ░░ TRANSITION BAND ░░ -->
-<div
-style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);border-top:1px solid rgba(184,137,58,0.08);border-bottom:1px solid rgba(184,137,58,0.1);">
-<div class="container">
-    <div class="orn-divider">
-        <div class="orn-line"></div>
-        <svg class="orn-symbol" width="100" height="24" viewBox="0 0 140 24" fill="none">
-            <text x="0" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☽</text>
-            <line x1="20" y1="12" x2="55" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.4" />
-            <text x="60" y="18" fill="#b8893a" opacity="0.8" font-size="14" font-family="serif">✦</text>
-            <line x1="80" y1="12" x2="115" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.4" />
-            <text x="118" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☀</text>
-        </svg>
-        <div class="orn-line"></div>
+<div style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);border-top:1px solid rgba(184,137,58,0.08);border-bottom:1px solid rgba(184,137,58,0.1);">
+    <div class="container">
+        <div class="orn-divider">
+            <div class="orn-line"></div>
+            <svg class="orn-symbol" width="100" height="24" viewBox="0 0 140 24" fill="none">
+                <text x="0" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☽</text>
+                <line x1="20" y1="12" x2="55" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.4" />
+                <text x="60" y="18" fill="#b8893a" opacity="0.8" font-size="14" font-family="serif">✦</text>
+                <line x1="80" y1="12" x2="115" y2="12" stroke="#b8893a" stroke-width="0.7" opacity="0.4" />
+                <text x="118" y="18" fill="#b8893a" opacity="0.7" font-size="14" font-family="serif">☀</text>
+            </svg>
+            <div class="orn-line"></div>
+        </div>
     </div>
 </div>
-</div>
 
-<!-- ░░ BOOKING ░░ -->
 <section id="reserva" class="parchment-section">
     <svg class="corner-ornament tl" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
     <svg class="corner-ornament tr" viewBox="0 0 55 55" fill="none"><path d="M2 2 L28 2" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 2 L2 28" stroke="#b8893a" stroke-width="0.8" opacity="0.6"/><path d="M2 12 Q12 12 12 2" stroke="#b8893a" stroke-width="0.5" fill="none" opacity="0.5"/><circle cx="2" cy="2" r="2" fill="#b8893a" opacity="0.5"/></svg>
@@ -1982,8 +1872,6 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
         </div>
 
         <div class="booking-layout">
-
-            <!-- Calendario -->
             <div class="reveal">
                 <div class="calendar-wrap">
                     <div class="calendar-header">
@@ -2002,12 +1890,8 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
                     </div>
                     <div class="calendar-grid">
                         <div class="cal-days-header">
-                            <div class="cal-day-name">Do</div>
-                            <div class="cal-day-name">Lu</div>
-                            <div class="cal-day-name">Ma</div>
-                            <div class="cal-day-name">Mi</div>
-                            <div class="cal-day-name">Ju</div>
-                            <div class="cal-day-name">Vi</div>
+                            <div class="cal-day-name">Do</div><div class="cal-day-name">Lu</div><div class="cal-day-name">Ma</div>
+                            <div class="cal-day-name">Mi</div><div class="cal-day-name">Ju</div><div class="cal-day-name">Vi</div>
                             <div class="cal-day-name">Sá</div>
                         </div>
                         <div class="cal-days" id="calDays"></div>
@@ -2019,30 +1903,25 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
                 </div>
             </div>
 
-            <!-- Formulario -->
             <div class="form-wrap reveal">
-
                 <div class="form-summary" id="bookingSummary">
                     <p class="form-summary-label">Inscripción Actual</p>
                     <p class="form-summary-value" id="summaryText">
                         <span class="form-summary-empty">Elige un rito y fecha para inscribir tu nombre.</span>
                     </p>
                 </div>
-
                 <div class="field-group">
                     <label class="field-label" for="inputNombre">Nombre Completo</label>
                     <input class="field-input" type="text" id="inputNombre" placeholder="Tu nombre completo..."
                     autocomplete="name" />
                     <p class="field-error">Por favor ingresa tu nombre completo.</p>
                 </div>
-
                 <div class="field-group">
                     <label class="field-label" for="inputWA">Número de WhatsApp</label>
                     <input class="field-input" type="tel" id="inputWA" placeholder="+54 9 11 0000 0000"
                     autocomplete="tel" />
                     <p class="field-error">Por favor ingresa un número de WhatsApp válido.</p>
                 </div>
-
                 <div class="field-group">
                     <label class="field-label" for="inputArea">Área de Enfoque</label>
                     <div class="field-select-wrap">
@@ -2058,16 +1937,13 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
                     </div>
                     <p class="field-error">Por favor selecciona un área de enfoque.</p>
                 </div>
-
                 <div class="field-group">
                     <label class="field-label" for="inputNota">Nota Adicional &nbsp;<span
                         style="opacity:.4;font-size:.55rem;font-family:'Cinzel',serif;">(Opcional)</span></label>
                         <textarea class="field-textarea" id="inputNota"
                         placeholder="¿Hay algo específico que el facilitador deba conocer antes de la sesión?"></textarea>
                     </div>
-
                     <div class="form-cta">
-                        <!-- LUXURY BRUSHED METAL BUTTON -->
                         <button class="btn-luxury" onclick="handleSubmit()">
                             <span>Solicitar Reserva →</span>
                         </button>
@@ -2076,73 +1952,68 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
                             discreción y confidencialidad absoluta.
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ░░ VOID TRANSITION ░░ -->
-    <div
-    style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void);border-top:1px solid rgba(184,137,58,0.1);">
-    <div class="container">
-        <div class="orn-divider">
-            <div class="orn-line"></div>
-            <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
-                <circle cx="30" cy="12" r="6" stroke="#b8893a" stroke-width="0.8" opacity="0.6" />
-                <line x1="0" y1="12" x2="22" y2="12" stroke="#b8893a" stroke-width="0.6" opacity="0.4" />
-                <line x1="38" y1="12" x2="60" y2="12" stroke="#b8893a" stroke-width="0.6" opacity="0.4" />
-                <circle cx="30" cy="12" r="2.5" fill="#b8893a" opacity="0.5" />
-            </svg>
-            <div class="orn-line"></div>
+    <div style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void);border-top:1px solid rgba(184,137,58,0.1);">
+        <div class="container">
+            <div class="orn-divider">
+                <div class="orn-line"></div>
+                <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                    <circle cx="30" cy="12" r="6" stroke="#b8893a" stroke-width="0.8" opacity="0.6" />
+                    <line x1="0" y1="12" x2="22" y2="12" stroke="#b8893a" stroke-width="0.6" opacity="0.4" />
+                    <line x1="38" y1="12" x2="60" y2="12" stroke="#b8893a" stroke-width="0.6" opacity="0.4" />
+                    <circle cx="30" cy="12" r="2.5" fill="#b8893a" opacity="0.5" />
+                </svg>
+                <div class="orn-line"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ░░ PHILOSOPHY ░░ -->
-<section id="filosofia">
-    <div class="container">
-        <div class="section-header reveal">
-            <p class="section-eyebrow">✦ &nbsp; Doctrina &nbsp; ✦</p>
-            <h2 class="section-title">Principios de la Práctica</h2>
-            <div class="orn-divider" style="max-width:320px;margin:1rem auto;">
+    <section id="filosofia">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">✦ &nbsp; Doctrina &nbsp; ✦</p>
+                <h2 class="section-title">Principios de la Práctica</h2>
+                <div class="orn-divider" style="max-width:320px;margin:1rem auto;">
+                    <div class="orn-line"
+                    style="background:linear-gradient(to right, transparent, rgba(184,137,58,0.2), transparent);">
+                </div>
+                <span class="orn-symbol" style="font-size:0.7rem;padding:0 0.8rem;">◈</span>
                 <div class="orn-line"
                 style="background:linear-gradient(to right, transparent, rgba(184,137,58,0.2), transparent);">
             </div>
-            <span class="orn-symbol" style="font-size:0.7rem;padding:0 0.8rem;">◈</span>
-            <div class="orn-line"
-            style="background:linear-gradient(to right, transparent, rgba(184,137,58,0.2), transparent);">
+        </div>
+        <p class="section-sub" style="color:rgba(237,225,188,0.38);">Cada sesión está sostenida por pilares
+        inamovibles de integridad, presencia y ética profesional.</p>
+    </div>
+    <div class="pillars reveal">
+        <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <p class="pillar-title">Discreción Absoluta</p>
+            <p class="pillar-text">Total confidencialidad en cada intercambio y proceso. Tu privacidad es sagrada.</p>
+        </div>
+        <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
+            <p class="pillar-title">Presencia Total</p>
+            <p class="pillar-text">Cada sesión recibe atención undivided. Sin distracciones, sin protocolos genéricos.</p>
+        </div>
+        <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+            <p class="pillar-title">Excelencia Ritual</p>
+            <p class="pillar-text">Más de una década de formación continua en tradiciones ancestrales de alto nivel.</p>
+        </div>
+        <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <p class="pillar-title">Ética Incondicional</p>
+            <p class="pillar-text">Solo se trabaja desde el amor consciente, sin manipulación ni dependencia.</p>
         </div>
     </div>
-    <p class="section-sub" style="color:rgba(237,225,188,0.38);">Cada sesión está sostenida por pilares
-    inamovibles de integridad, presencia y ética profesional.</p>
-</div>
-<div class="pillars reveal">
-    <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <p class="pillar-title">Discreción Absoluta</p>
-        <p class="pillar-text">Total confidencialidad en cada intercambio y proceso. Tu privacidad es sagrada.</p>
-    </div>
-    <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
-        <p class="pillar-title">Presencia Total</p>
-        <p class="pillar-text">Cada sesión recibe atención undivided. Sin distracciones, sin protocolos genéricos.</p>
-    </div>
-    <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
-        <p class="pillar-title">Excelencia Ritual</p>
-        <p class="pillar-text">Más de una década de formación continua en tradiciones ancestrales de alto nivel.</p>
-    </div>
-    <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        <p class="pillar-title">Ética Incondicional</p>
-        <p class="pillar-text">Solo se trabaja desde el amor consciente, sin manipulación ni dependencia.</p>
-    </div>
-</div>
 </div>
 </section>
 
-<!-- ░░ FOOTER ░░ -->
 <footer>
     <p class="footer-logo">Sanctum Obscura</p>
     <svg width="50" height="16" viewBox="0 0 50 16" fill="none">
@@ -2154,14 +2025,12 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
     <p class="footer-copy">© 2025 Sanctum Obscura — Todos los derechos reservados. Omnia sub sigillo discretionis.</p>
 </footer>
 
-<!-- ░░ MODAL ░░ -->
 <div class="modal-overlay" id="confirmModal">
     <div class="modal">
         <svg class="modal-corner tl" viewBox="0 0 40 40" fill="none"><path d="M1 1 L22 1 M1 1 L1 22" stroke="#b8893a" stroke-width="0.8" opacity="0.5"/><path d="M1 10 Q10 10 10 1" stroke="#b8893a" stroke-width="0.5" opacity="0.4"/><circle cx="1" cy="1" r="1.5" fill="#b8893a" opacity="0.5"/></svg>
         <svg class="modal-corner tr" viewBox="0 0 40 40" fill="none"><path d="M1 1 L22 1 M1 1 L1 22" stroke="#b8893a" stroke-width="0.8" opacity="0.5"/><path d="M1 10 Q10 10 10 1" stroke="#b8893a" stroke-width="0.5" opacity="0.4"/><circle cx="1" cy="1" r="1.5" fill="#b8893a" opacity="0.5"/></svg>
         <svg class="modal-corner bl" viewBox="0 0 40 40" fill="none"><path d="M1 1 L22 1 M1 1 L1 22" stroke="#b8893a" stroke-width="0.8" opacity="0.5"/><path d="M1 10 Q10 10 10 1" stroke="#b8893a" stroke-width="0.5" opacity="0.4"/><circle cx="1" cy="1" r="1.5" fill="#b8893a" opacity="0.5"/></svg>
         <svg class="modal-corner br" viewBox="0 0 40 40" fill="none"><path d="M1 1 L22 1 M1 1 L1 22" stroke="#b8893a" stroke-width="0.8" opacity="0.5"/><path d="M1 10 Q10 10 10 1" stroke="#b8893a" stroke-width="0.5" opacity="0.4"/><circle cx="1" cy="1" r="1.5" fill="#b8893a" opacity="0.5"/></svg>
-
         <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
         <div class="modal-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -2185,369 +2054,133 @@ style="position:relative;z-index:1;padding:1.5rem 0;background:var(--void-mid);b
 </div>
 </div>
 
-<!-- ░░ TOAST ░░ -->
 <div class="toast" id="toast"></div>
 
 <script>
-    /* ═══════════════════════════════════════════════════════════
-       CONSTELLATION GENERATOR
-    ═══════════════════════════════════════════════════════════ */
     (function generateConstellation() {
         const svg = document.getElementById('constellation');
-        const W = window.innerWidth,
-        H = window.innerHeight;
+        const W = window.innerWidth, H = window.innerHeight;
         svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-        svg.setAttribute('width', W);
-        svg.setAttribute('height', H);
-
+        svg.setAttribute('width', W); svg.setAttribute('height', H);
         const stars = [];
         for (let i = 0; i < 90; i++) {
             stars.push({
-                x: Math.random() * W,
-                y: Math.random() * H,
-                r: Math.random() * 1.2 + 0.3,
-                o: Math.random() * 0.5 + 0.15
+                x: Math.random() * W, y: Math.random() * H,
+                r: Math.random() * 1.2 + 0.3, o: Math.random() * 0.5 + 0.15
             });
         }
-
         let lines = '';
         for (let i = 0; i < stars.length; i++) {
             for (let j = i + 1; j < stars.length; j++) {
-                const dx = stars[i].x - stars[j].x,
-                dy = stars[i].y - stars[j].y;
+                const dx = stars[i].x - stars[j].x, dy = stars[i].y - stars[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < 110) {
                     const op = (1 - dist / 110) * 0.07;
-                    lines +=
-                    `<line x1="${stars[i].x.toFixed(1)}" y1="${stars[i].y.toFixed(1)}" x2="${stars[j].x.toFixed(1)}" y2="${stars[j].y.toFixed(1)}" stroke="#b8893a" stroke-width="0.5" opacity="${op.toFixed(3)}"/>`;
+                    lines += `<line x1="${stars[i].x.toFixed(1)}" y1="${stars[i].y.toFixed(1)}" x2="${stars[j].x.toFixed(1)}" y2="${stars[j].y.toFixed(1)}" stroke="#b8893a" stroke-width="0.5" opacity="${op.toFixed(3)}"/>`;
                 }
             }
         }
-
-        const circles = stars.map(s =>
-            `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r.toFixed(2)}" fill="#b8893a" opacity="${s.o.toFixed(2)}"/>`
-        ).join('');
-
-        const brightStars = Array.from({ length: 8 }, () => ({
-            x: Math.random() * W,
-            y: Math.random() * H,
-            r: 2.2
-        }));
-        const brights = brightStars.map(s =>
-            `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r}" fill="#e8cfa0" opacity="0.6"/>
-             <circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r * 4}" fill="#b8893a" opacity="0.06"/>`
-        ).join('');
-
+        const circles = stars.map(s => `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r.toFixed(2)}" fill="#b8893a" opacity="${s.o.toFixed(2)}"/>`).join('');
+        const brightStars = Array.from({ length: 8 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 2.2 }));
+        const brights = brightStars.map(s => `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r}" fill="#e8cfa0" opacity="0.6"/><circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${s.r * 4}" fill="#b8893a" opacity="0.06"/>`).join('');
         svg.innerHTML = lines + circles + brights;
     })();
 
-    /* ═══════════════════════════════════════════════════════════
-       STATE
-    ═══════════════════════════════════════════════════════════ */
-    const state = {
-        selectedService: null,
-        selectedDate: null,
-        selectedTime: null,
-        whatsappLink: null
-    };
-
-    const WHATSAPP_NUMBER = '5491100000000'; // ← Reemplaza con tu número real
-
-    /* ═══════════════════════════════════════════════════════════
-       CALENDAR
-    ═══════════════════════════════════════════════════════════ */
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
-        'Noviembre', 'Diciembre'
-    ];
+    const state = { selectedService: null, selectedDate: null, selectedTime: null, whatsappLink: null };
+    const WHATSAPP_NUMBER = '5491100000000';
+    const months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
     const today = new Date();
-    let viewYear = today.getFullYear();
-    let viewMonth = today.getMonth();
-
-    const ALL_SLOTS = ['09:00', '10:00', '11:00', '13:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+    let viewYear = today.getFullYear(), viewMonth = today.getMonth();
+    const ALL_SLOTS = ['09:00','10:00','11:00','13:00','15:00','16:00','17:00','18:00','19:00'];
 
     function renderCalendar() {
         document.getElementById('calMonthName').textContent = months[viewMonth];
         document.getElementById('calYear').textContent = viewYear;
         document.getElementById('prevMonth').disabled = (viewYear === today.getFullYear() && viewMonth <= today.getMonth());
-
         const firstDay = new Date(viewYear, viewMonth, 1).getDay();
         const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
         const grid = document.getElementById('calDays');
         grid.innerHTML = '';
-
-        for (let i = 0; i < firstDay; i++) {
-            const empty = document.createElement('div');
-            empty.className = 'cal-day empty';
-            grid.appendChild(empty);
-        }
-
+        for (let i = 0; i < firstDay; i++) { const empty = document.createElement('div'); empty.className = 'cal-day empty'; grid.appendChild(empty); }
         for (let d = 1; d <= daysInMonth; d++) {
-            const cell = document.createElement('div');
-            cell.className = 'cal-day';
-            cell.textContent = d;
-
+            const cell = document.createElement('div'); cell.className = 'cal-day'; cell.textContent = d;
             const cellDate = new Date(viewYear, viewMonth, d);
             const isToday = (d === today.getDate() && viewMonth === today.getMonth() && viewYear === today.getFullYear());
             const isPast = cellDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
             const isSunday = cellDate.getDay() === 0;
-
-            if (isPast || isSunday) {
-                cell.classList.add('past');
-            } else {
-                if (isToday) cell.classList.add('today');
-                cell.classList.add('has-slots');
-                cell.addEventListener('click', () => selectDate(d, cell));
-            }
-
-            if (state.selectedDate) {
-                const [sy, sm, sd] = state.selectedDate.split('-').map(Number);
-                if (d === sd && viewMonth === sm - 1 && viewYear === sy) cell.classList.add('selected');
-            }
-
+            if (isPast || isSunday) { cell.classList.add('past'); }
+            else { if (isToday) cell.classList.add('today'); cell.classList.add('has-slots'); cell.addEventListener('click', () => selectDate(d, cell)); }
+            if (state.selectedDate) { const [sy, sm, sd] = state.selectedDate.split('-').map(Number); if (d === sd && viewMonth === sm - 1 && viewYear === sy) cell.classList.add('selected'); }
             grid.appendChild(cell);
         }
     }
-
     function selectDate(day, el) {
         document.querySelectorAll('.cal-day').forEach(c => c.classList.remove('selected'));
         el.classList.add('selected');
         state.selectedDate = `${viewYear}-${String(viewMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-        state.selectedTime = null;
-        renderTimeSlots();
-        updateSummary();
+        state.selectedTime = null; renderTimeSlots(); updateSummary();
     }
-
     function renderTimeSlots() {
-        const section = document.getElementById('timeSlotsSection');
-        const grid = document.getElementById('slotsGrid');
-        grid.innerHTML = '';
-        section.style.display = 'block';
-
-        const isToday = (() => {
-            if (!state.selectedDate) return false;
-            const [sy, sm, sd] = state.selectedDate.split('-').map(Number);
-            return sy === today.getFullYear() && sm - 1 === today.getMonth() && sd === today.getDate();
-        })();
-
+        const section = document.getElementById('timeSlotsSection'), grid = document.getElementById('slotsGrid');
+        grid.innerHTML = ''; section.style.display = 'block';
+        const isToday = (() => { if (!state.selectedDate) return false; const [sy, sm, sd] = state.selectedDate.split('-').map(Number); return sy === today.getFullYear() && sm - 1 === today.getMonth() && sd === today.getDate(); })();
         ALL_SLOTS.forEach(slot => {
-            const el = document.createElement('div');
-            el.className = 'time-slot';
-            el.textContent = slot;
-
-            if (isToday) {
-                const [h, m] = slot.split(':').map(Number);
-                const slotDate = new Date();
-                slotDate.setHours(h, m, 0);
-                if (slotDate <= today) { el.classList.add('past'); }
-            }
-
-            if (!el.classList.contains('past')) {
-                el.addEventListener('click', () => {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove(
-                        'selected'));
-                    el.classList.add('selected');
-                    state.selectedTime = slot;
-                    updateSummary();
-                });
-            }
-
+            const el = document.createElement('div'); el.className = 'time-slot'; el.textContent = slot;
+            if (isToday) { const [h, m] = slot.split(':').map(Number); const slotDate = new Date(); slotDate.setHours(h, m, 0); if (slotDate <= today) { el.classList.add('past'); } }
+            if (!el.classList.contains('past')) { el.addEventListener('click', () => { document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected')); el.classList.add('selected'); state.selectedTime = slot; updateSummary(); }); }
             if (state.selectedTime === slot) el.classList.add('selected');
             grid.appendChild(el);
         });
     }
-
-    function changeMonth(dir) {
-        viewMonth += dir;
-        if (viewMonth > 11) { viewMonth = 0;
-            viewYear++; }
-        if (viewMonth < 0) { viewMonth = 11;
-            viewYear--; }
-        renderCalendar();
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       SERVICE SELECTION (with ink blot effect)
-    ═══════════════════════════════════════════════════════════ */
+    function changeMonth(dir) { viewMonth += dir; if (viewMonth > 11) { viewMonth = 0; viewYear++; } if (viewMonth < 0) { viewMonth = 11; viewYear--; } renderCalendar(); }
     function selectService(card, event) {
         document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
-        state.selectedService = {
-            name: card.dataset.service,
-            price: card.dataset.price,
-            duration: card.dataset.duration
-        };
-
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left);
-        const y = (event.clientY - rect.top);
-        const blot = document.createElement('div');
-        blot.className = 'ink-blot';
-        blot.style.left = x + 'px';
-        blot.style.top = y + 'px';
-        card.appendChild(blot);
-        setTimeout(() => blot.remove(), 900);
-
-        updateSummary();
-        showToast('Rito seleccionado. Inscribe tu fecha en el grimorio.');
-        setTimeout(() => {
-            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 500);
+        state.selectedService = { name: card.dataset.service, price: card.dataset.price, duration: card.dataset.duration };
+        const rect = card.getBoundingClientRect(), x = (event.clientX - rect.left), y = (event.clientY - rect.top);
+        const blot = document.createElement('div'); blot.className = 'ink-blot'; blot.style.left = x + 'px'; blot.style.top = y + 'px';
+        card.appendChild(blot); setTimeout(() => blot.remove(), 900);
+        updateSummary(); showToast('Rito seleccionado. Inscribe tu fecha en el grimorio.');
+        setTimeout(() => { document.getElementById('reserva').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 500);
     }
-
-    /* ═══════════════════════════════════════════════════════════
-       SUMMARY UPDATE
-    ═══════════════════════════════════════════════════════════ */
     function updateSummary() {
-        const el = document.getElementById('summaryText');
-        const parts = [];
+        const el = document.getElementById('summaryText'), parts = [];
         if (state.selectedService) parts.push(state.selectedService.name);
-        if (state.selectedDate) {
-            const [y, m, d] = state.selectedDate.split('-').map(Number);
-            parts.push(`${d} de ${months[m-1]} ${y}`);
-        }
+        if (state.selectedDate) { const [y, m, d] = state.selectedDate.split('-').map(Number); parts.push(`${d} de ${months[m-1]} ${y}`); }
         if (state.selectedTime) parts.push(`${state.selectedTime} hrs`);
-
-        if (parts.length === 0) {
-            el.innerHTML =
-                '<span class="form-summary-empty">Elige un rito y fecha para inscribir tu nombre.</span>';
-        } else {
-            el.textContent = parts.join('  ·  ');
-        }
+        if (parts.length === 0) { el.innerHTML = '<span class="form-summary-empty">Elige un rito y fecha para inscribir tu nombre.</span>'; }
+        else { el.textContent = parts.join('  ·  '); }
     }
-
-    /* ═══════════════════════════════════════════════════════════
-       FORM VALIDATION & SUBMISSION
-    ═══════════════════════════════════════════════════════════ */
     function validate() {
-        let ok = true;
-        const nombre = document.getElementById('inputNombre');
-        const wa = document.getElementById('inputWA');
-        const area = document.getElementById('inputArea');
-
+        let ok = true; const nombre = document.getElementById('inputNombre'), wa = document.getElementById('inputWA'), area = document.getElementById('inputArea');
         [nombre, wa, area].forEach(f => f.closest('.field-group').classList.remove('error'));
-
-        if (!nombre.value.trim() || nombre.value.trim().split(' ').length < 2) {
-            nombre.closest('.field-group').classList.add('error');
-            ok = false;
-        }
-        if (!wa.value.trim() || wa.value.trim().length < 8) {
-            wa.closest('.field-group').classList.add('error');
-            ok = false;
-        }
-        if (!area.value) {
-            area.closest('.field-group').classList.add('error');
-            ok = false;
-        }
-        if (!state.selectedService) { showToast('Por favor selecciona un rito primero.');
-            ok = false; }
-        if (!state.selectedDate) { showToast('Por favor inscribe una fecha.');
-            ok = false; }
-        if (!state.selectedTime) { showToast('Por favor elige un horario.');
-            ok = false; }
+        if (!nombre.value.trim() || nombre.value.trim().split(' ').length < 2) { nombre.closest('.field-group').classList.add('error'); ok = false; }
+        if (!wa.value.trim() || wa.value.trim().length < 8) { wa.closest('.field-group').classList.add('error'); ok = false; }
+        if (!area.value) { area.closest('.field-group').classList.add('error'); ok = false; }
+        if (!state.selectedService) { showToast('Por favor selecciona un rito primero.'); ok = false; }
+        if (!state.selectedDate) { showToast('Por favor inscribe una fecha.'); ok = false; }
+        if (!state.selectedTime) { showToast('Por favor elige un horario.'); ok = false; }
         return ok;
     }
-
     function handleSubmit() {
         if (!validate()) return;
-
-        const nombre = document.getElementById('inputNombre').value.trim();
-        const wa = document.getElementById('inputWA').value.trim();
-        const area = document.getElementById('inputArea').value;
-        const nota = document.getElementById('inputNota').value.trim();
-        const [y, m, d] = state.selectedDate.split('-').map(Number);
-        const fechaStr = `${d} de ${months[m-1]} de ${y}`;
-
-        const mensaje = [
-            `Estimado/a equipo de *Sanctum Obscura*,`,
-            ``,
-            `Me dirijo a ustedes con el fin de solicitar formalmente una reserva para la siguiente sesión:`,
-            ``,
-            `• *Rito / Servicio:* ${state.selectedService.name}`,
-            `• *Fecha solicitada:* ${fechaStr}`,
-            `• *Horario preferido:* ${state.selectedTime} hrs`,
-            `• *Área de Enfoque:* ${area}`,
-            nota ? `• *Nota adicional:* ${nota}` : null,
-            ``,
-            `*Datos de contacto:*`,
-            `• Nombre: ${nombre}`,
-            `• WhatsApp: ${wa}`,
-            ``,
-            `Quedo a la espera de su confirmación. Muchas gracias.`,
-            ``,
-            `Atentamente,`,
-            `${nombre}`
-        ].filter(l => l !== null).join('\n');
-
+        const nombre = document.getElementById('inputNombre').value.trim(), wa = document.getElementById('inputWA').value.trim(), area = document.getElementById('inputArea').value, nota = document.getElementById('inputNota').value.trim();
+        const [y, m, d] = state.selectedDate.split('-').map(Number), fechaStr = `${d} de ${months[m-1]} de ${y}`;
+        const mensaje = [`Estimado/a equipo de *Sanctum Obscura*,`, ``, `Me dirijo a ustedes con el fin de solicitar formalmente una reserva para la siguiente sesión:`, ``, `• *Rito / Servicio:* ${state.selectedService.name}`, `• *Fecha solicitada:* ${fechaStr}`, `• *Horario preferido:* ${state.selectedTime} hrs`, `• *Área de Enfoque:* ${area}`, nota ? `• *Nota adicional:* ${nota}` : null, ``, `*Datos de contacto:*`, `• Nombre: ${nombre}`, `• WhatsApp: ${wa}`, ``, `Quedo a la espera de su confirmación. Muchas gracias.`, ``, `Atentamente,`, `${nombre}`].filter(l => l !== null).join('\n');
         state.whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
-
         const modal = document.getElementById('modalSummaryContent');
-        const rows = [
-            ['Rito', state.selectedService.name],
-            ['Duración', state.selectedService.duration],
-            ['Inversión', state.selectedService.price],
-            ['Fecha', fechaStr],
-            ['Horario', `${state.selectedTime} hrs`],
-            ['Nombre', nombre],
-            ['Área', area]
-        ];
-        modal.innerHTML = rows.map(([k, v]) => `
-            <div class="modal-summary-row">
-              <span class="modal-summary-key">${k}</span>
-              <span class="modal-summary-val">${v}</span>
-            </div>`).join('');
-
+        const rows = [['Rito', state.selectedService.name],['Duración', state.selectedService.duration],['Inversión', state.selectedService.price],['Fecha', fechaStr],['Horario', `${state.selectedTime} hrs`],['Nombre', nombre],['Área', area]];
+        modal.innerHTML = rows.map(([k, v]) => `<div class="modal-summary-row"><span class="modal-summary-key">${k}</span><span class="modal-summary-val">${v}</span></div>`).join('');
         openModal();
     }
-
-    function goToWhatsApp() {
-        if (state.whatsappLink) window.open(state.whatsappLink, '_blank');
-        closeModal();
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       MODAL
-    ═══════════════════════════════════════════════════════════ */
-    function openModal() {
-        document.getElementById('confirmModal').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        document.getElementById('confirmModal').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    document.getElementById('confirmModal').addEventListener('click', function(e) {
-        if (e.target === this) closeModal();
-    });
-
-    /* ═══════════════════════════════════════════════════════════
-       TOAST
-    ═══════════════════════════════════════════════════════════ */
+    function goToWhatsApp() { if (state.whatsappLink) window.open(state.whatsappLink, '_blank'); closeModal(); }
+    function openModal() { document.getElementById('confirmModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { document.getElementById('confirmModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('confirmModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
     let toastTimer = null;
-
-    function showToast(msg) {
-        const t = document.getElementById('toast');
-        t.textContent = msg;
-        t.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       INTERSECTION OBSERVER (REVEAL)
-    ═══════════════════════════════════════════════════════════ */
-    const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('visible');
-                io.unobserve(e.target); }
-        });
-    }, { threshold: 0.1 });
-
+    function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3200); }
+    const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    /* ═══════════════════════════════════════════════════════════
-       INIT
-    ═══════════════════════════════════════════════════════════ */
     renderCalendar();
 </script>
 </body>
